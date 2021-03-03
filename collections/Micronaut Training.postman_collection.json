@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "ede98d33-2202-4495-a148-d873187f2f18",
+		"name": "Micronaut Training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Author",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Yan Tapajós\",\n    \"email\": \"ybrandao.d@gmail.com\",\n    \"description\": \"Dramatic author, knowledge by Game of Thrones saga and other blockbusters books\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
