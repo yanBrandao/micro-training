@@ -1,6 +1,6 @@
 applicationType: default
-defaultPackage: br.com.onegtwom
+defaultPackage: br.com.woodriver
 testFramework: junit
 sourceLanguage: kotlin
-buildTool: maven
-features: [annotation-api, app-name, data, data-jpa, h2, http-client, jdbc-hikari, junit, kotlin, kotlin-application, logback, maven, netty-server, readme, shade, yaml]
+buildTool: gradle
+features: [ annotation-api, app-name, data, data-jpa, gradle, h2, http-client, jdbc-hikari, junit, kotlin, kotlin-application, logback, netty-server, readme, shade, yaml ]
