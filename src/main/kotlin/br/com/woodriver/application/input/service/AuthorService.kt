@@ -7,7 +7,15 @@ import javax.inject.Singleton
 
 @Singleton
 class AuthorService(private val authorPort: AuthorPort): AuthorUseCase {
-    override fun create(request: Author): Author {
-        return authorPort.save(request)
+    override fun create(author: Author): Author {
+        return author.save(authorPort)
+    }
+
+    override fun findAuthors(): List<Author> {
+        return authorPort.findAll()
+    }
+
+    override fun findAuthorByEmail(email: String): Author {
+        return authorPort.findAuthorByEmail(email)
     }
 }
