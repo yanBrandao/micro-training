@@ -10,4 +10,8 @@ data class Author(
     fun save(authorPort: AuthorPort): Author {
         return authorPort.save(this)
     }
+
+    fun update(id: Int, authorPort: AuthorPort): Author {
+        return authorPort.update(id, this)
+    }
 }

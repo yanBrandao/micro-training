@@ -18,4 +18,8 @@ class AuthorService(private val authorPort: AuthorPort): AuthorUseCase {
     override fun findAuthorByEmail(email: String): Author {
         return authorPort.findAuthorByEmail(email)
     }
+
+    override fun updateAuthor(id: Int, author: Author): Author {
+        return author.update(id, authorPort)
+    }
 }

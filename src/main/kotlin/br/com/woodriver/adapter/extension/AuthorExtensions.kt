@@ -17,6 +17,13 @@ fun Author.toEntity(): AuthorEntity =
         description = this.description
     )
 
+fun Author.toEntity(id: Int): AuthorEntity =
+    AuthorEntity(email = this.email,
+        name = this.name,
+        description = this.description,
+        id = id
+    )
+
 fun AuthorEntity.toDomain(): Author =
     Author(email = this.email,
         name = this.name,

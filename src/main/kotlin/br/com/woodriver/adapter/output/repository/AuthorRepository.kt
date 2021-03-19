@@ -21,4 +21,12 @@ class AuthorRepository(private val authorJPA: AuthorJPA): AuthorPort {
     override fun findAuthorByEmail(email: String): Author {
         return authorJPA.findByEmail(email).toDomain()
     }
+
+    override fun findById(id: Int): Author {
+        return authorJPA.findById(id).get().toDomain()
+    }
+
+    override fun update(id: Int, author: Author): Author {
+        return authorJPA.update(author.toEntity(id)).toDomain()
+    }
 }

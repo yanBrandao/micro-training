@@ -8,4 +8,6 @@ interface AuthorUseCase {
     fun findAuthors(): List<Author>
 
     fun findAuthorByEmail(email: String): Author
+
+    fun updateAuthor(id: Int, author: Author): Author
 }
