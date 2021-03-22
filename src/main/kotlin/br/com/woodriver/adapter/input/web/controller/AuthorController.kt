@@ -10,6 +10,7 @@ import io.micronaut.data.exceptions.EmptyResultException
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.*
 import io.micronaut.validation.Validated
+import javax.transaction.Transactional
 import javax.validation.Valid
 
 @Validated
@@ -17,6 +18,7 @@ import javax.validation.Valid
 class AuthorController(val authorUseCase: AuthorUseCase): AuthorAPI {
 
     @Post
+    @Transactional
     override fun create(@Body @Valid request: AuthorRequest): HttpResponse<AuthorResponse> {
         println("Starting to save author with name ${request.name}")
         return HttpResponse.ok(
@@ -50,5 +52,7 @@ class AuthorController(val authorUseCase: AuthorUseCase): AuthorAPI {
             HttpResponse.notFound(empty.message)
         }
     }
+
+
 
 }

@@ -5,6 +5,7 @@ import br.com.woodriver.adapter.extension.toEntity
 import br.com.woodriver.application.input.domain.Author
 import br.com.woodriver.application.output.port.AuthorPort
 import javax.inject.Singleton
+import javax.transaction.Transactional
 
 @Singleton
 class AuthorRepository(private val authorJPA: AuthorJPA): AuthorPort {
@@ -26,6 +27,7 @@ class AuthorRepository(private val authorJPA: AuthorJPA): AuthorPort {
         return authorJPA.findById(id).get().toDomain()
     }
 
+    @Transactional
     override fun update(id: Int, author: Author): Author {
         return authorJPA.update(author.toEntity(id)).toDomain()
     }
